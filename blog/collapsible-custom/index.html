@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Emanuel Kardum</title>
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../css/font.martel.subset.min.css"> 
+<head>
+<meta name="author" content="Emanuel Kardum">
+<meta name="description" content="My personal website wich includes short portfolio of my skills and blog of simple hacks for Oracle APEX components. Sharing knowledge #orclapex">
+<meta name="keywords" content="Oracle, APEX, orclapex, Croatia, HrOUG, APEX Alpe Adria">
+</head>
+<body>
+<div class="navbar grid">
+<nav class="nav grid_item grid--4 grid--center">
+<a href="../../index.html">Home</a>
+<a href="../index.html">Blog</a>
+<a href="https://apex.oracle.com" target="_blank">APEX</a>
+<a href="mailto:">Email</a>
+<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+<a href="https://linkedin.com/" target="_blank"><i class="fa fa-github-alt"></i></a>
+
+</nav>
+</div>
+<div class="header">
+<div class="grid grid--6">
+<div class="grid_item grid--center">
+<h1 class="title">Collapsible region - custom collapse action</h1>
+<time class="subtitle" datetime="2018-09-21">21 August 2018</time>
+</div>
+</div>
+</div>
+<main class="content page">
+<ul class="grid grid--4">
+<li class="grid_item">
+<div>Have you ever had a request from customer to do some unusual tweak on an existing component? It may seem simple and easy at first, but when you dive into solving the problem you may find yourself surprised how much time you spend on it. </div>
+<p>If you want to be able to collapse and expand collapsible region on click somewhere else instead of only clicking on button, you can simply do it with a bit of jquery. First of all you should add dynamic action on <em>Page load:</em></p>
+<figure class="figure">
+<pre class="figure_item image codeblock"><code class="code code--js">$('#t_Body_nav #t_TreeNav li.a-TreeView-node--topLevel > div.a-TreeView-content:not(:has(a))').click(function(){
+   $(this).prev('span.a-TreeView-toggle').click();
+});
+}</code></pre>
+</figure>
+<p>After you did that, you can add some more CSS to make this tweak look more natural, so you simply add following bit of code to your theme roller or page css, depending of scope in which you want it to be active:
+<figure class="figure">
+<pre class="figure_item image codeblock"><code class="code code--css">.t-Region-header{
+	cursor:pointer;
+}</code></pre>
+
+</li>
+</ul>
+</main>
+
+<div class="content content--alt">
+<div class="grid grid--6">
+<div class="grid_item grid--3">
+<h2 id="personal-achievements">Personal Achievements</h2>
+</div>
+<div class="grid__item grid--3">
+<h2 id="referenced-in">Referenced in…</h2>
+
+</div>
+</div>
+</div>
+<script src="../../js/code.min.js" async></script>
+</body>
+</html>
