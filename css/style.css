@@ -54,6 +54,9 @@ body>svg{
 .grid--center{
     text-align:center
 }
+header grid--6{
+    padding:45px;
+}
 .sitelogo{
     max-height:75px
 }
