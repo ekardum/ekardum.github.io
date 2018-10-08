@@ -54,9 +54,7 @@ body>svg{
 .grid--center{
     text-align:center
 }
-header grid--6{
-    padding:45px;
-}
+
 .sitelogo{
     max-height:75px
 }
@@ -185,10 +183,11 @@ header grid--6{
 .title{
     color:white;
     margin:0;
-    font-size:230%;
-    font: 230% Martel-subset,Georgia;
+    font: 250% Martel-subset,Georgia;
     -webkit-animation:1s .25s fade backwards ease-out;
     animation:1s .25s fade backwards ease-out
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
 }
 .figure{
     display:block;
