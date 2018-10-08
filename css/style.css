@@ -513,3 +513,32 @@ only screen and (max-width: 760px),
         padding-right: 10px; 
         white-space: nowrap;
     }
+
+@media screen and (max-width:640px){
+    .grid{
+        padding:0
+    }
+    .grid_item{
+        font-size:.9rem
+    }
+    .bullet-list{
+        margin-left:1.125em
+    }
+}
+@media screen and (max-width:310px){
+    .grid_item{
+        font-size:.7rem
+    }
+}
+@-webkit-keyframes fade{
+    from{
+        transform:translateY(.25em);
+        opacity:0
+    }
+}
+@keyframes fade{
+    from{
+        transform:translateY(.25em);
+        opacity:0
+    }
+}
