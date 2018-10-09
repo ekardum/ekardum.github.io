@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Emanuel Kardum</title>
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../css/font.martel.subset.min.css"> 
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Emanuel Kardum">
+<meta name="description" content="My personal website wich includes short portfolio of my skills and blog of simple hacks for Oracle APEX components. Sharing knowledge #orclapex">
+<meta name="keywords" content="Oracle, APEX, orclapex, Croatia, HrOUG, APEX Alpe Adria">
+</head>
+<body>
+<div class="navbar grid">
+<nav class="nav grid_item grid--4 grid--center">
+<a href="../../index.html">Home</a>
+<a href="../index.html">Blog</a>
+<a href="https://apex.oracle.com/pls/apex/f?p=89057" target="_blank">Demo</a>
+<a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+<a href="https://linkedin.com/" target="_blank"><i class="fa fa-github-alt"></i></a>
+<a href="mailto:emkardum@gmail.com?Subject=APEX%20chemistry" target="_blank"><i class="fa fa-envelope"></i></a>
 
+</nav>
+</div>
+<div class="header">
+<div class="grid grid--6">
+<div class="grid_item grid--center">
+<h1 class="title">Auto-size textarea</h1>
+<time class="subtitle" datetime="2018-09-21">09 October 2018</time>
+</div>
+</div>
+</div>
+<main class="content page">
+<ul class="grid grid--4">
+<li class="grid_item">
+<div>Scrolling through textareas can be difficult to read when you have a fixed height but a lot of text in it. What if you could somehow make it responsive but still keep default design when page loads? </br>
+<b>Step 1:</b> add dynamic action on <code>Page load</code> with <i>Event Scope</i> <code>Dynamic</code>:</p>
+<img src="img/1.png">
+<p>Create new <i>True</i> action (JS) and add the following code:</p>
+<figure class="figure">
+<pre class="figure_item image codeblock"><code class="code code--js">let textarea = document.querySelectorAll('textarea');
+
+textarea.forEach(function(textarea) {
+textarea.addEventListener('click', autoresize);
+textarea.addEventListener('keydown', autoresize);
+});
+
+function autoresize(){
+  let el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto; padding:0';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  },0);
+}</code></pre>
+</figure>
+<p></br><b>Step 2:</b> -To make textarea get back to its default size, create another Dynamic action on <i>Lose focus</i> with jQuery selector <code>textarea</code>: </p>
+<img src="img/2.png">
+<p>In <i>True</i> action save this code:</p>
+<figure class="figure">
+<pre class="figure_item image codeblock"><code class="code code--css">$('textarea').css('height','auto')</code></pre>
+</br>
+<a href="https://apex.oracle.com/pls/apex/f?p=89057:2" target="_blank">Demo</a>
+</li>
+</ul>
+</main>
+
+<div class="content content--alt">
+<div class="grid grid--6">
+<div class="grid_item grid--3">
+<h2 id="personal-achievements">Personal Achievements</h2>
+</div>
+<div class="grid__item grid--3">
+<h2 id="referenced-in">Referenced in…</h2>
+
+</div>
+</div>
+</div>
+<script src="../../js/code.min.js" async></script>
+</body>
+</html>
