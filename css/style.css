@@ -566,6 +566,10 @@ only screen and (max-width: 760px),
     .bullet-list{
         margin-left:1.125em
     }
+    .figure{
+        margin-left: -20px;
+        margin-right: -20px;
+}
 }
 @media screen and (max-width:310px){
     .grid_item{
