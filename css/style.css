@@ -449,12 +449,15 @@ width:110px;
 .skills-table{
     width: 100%;
 }
+.content.homepage{
+    padding-top:0;
+}
 .homepage .subheading{
     display: inline-block;
     font-size: 2.9rem;
     font-weight: 100;
     padding: 10px 0;
-    margin-bottom: 44px;
+    margin-bottom: 0px;
     text-align: center;
     border-bottom: solid 1px #ccc;
     border-top: solid 1px #ccc;
@@ -462,7 +465,7 @@ width:110px;
     letter-spacing: 0.1em;
     line-height: 1.2;
     color: #555;
-    margin-top: 20px;
+    margin-top: 70px;
     letter-spacing: 0;
 }
 .align-center{
