@@ -556,7 +556,7 @@ only screen and (max-width: 760px),
         left: 6px;
         width: 45%; 
         padding-right: 10px; 
-        white-space: nowrap !important;
+        white-space: nowrap;
     }
 
 @media screen and (max-width:640px){
@@ -573,8 +573,8 @@ only screen and (max-width: 760px),
         margin-left: -20px;
         margin-right: -20px;
 }
-    .code{
-        white-space: initial;
+    code{
+        white-space: initial !important;
     }
 }
 @media screen and (max-width:310px){
