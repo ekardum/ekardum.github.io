@@ -185,7 +185,7 @@ body>svg{
     margin:0;
     font: 250% Martel-subset,Georgia;
     -webkit-animation:1s .25s fade backwards ease-out;
-    animation:1s .25s fade backwards ease-out
+    animation:1s .25s fade backwards ease-out;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
 }
