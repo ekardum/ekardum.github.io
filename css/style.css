@@ -573,7 +573,7 @@ only screen and (max-width: 760px),
         margin-left: -20px;
         margin-right: -20px;
 }
-    code{
+    .text-code{
         white-space: initial !important;
     }
 }
