@@ -473,6 +473,9 @@ width:110px;
     color:#EA1B22;
     font-size: 6rem;
 }
+.homepage-subtitle{
+    display:initial;
+}
 /*
 .subheading{
     display: inline-block;
@@ -511,6 +514,11 @@ width:110px;
     }
     .homepage .subheading{
         font-size:1.9rem;
+    }
+}
+@media screen and (max-width:724px){
+    .homepage-subtitle{
+        display:block;
     }
 }
 @media screen and (max-width:310px){
