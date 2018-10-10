@@ -469,8 +469,7 @@ width:110px;
     text-align:center;
 }
 .devicon-oracle-original{
-    height: 50px;
-    color:#EA1B22;
+    height: 80px;
     font-size: 6rem;
 }
 .homepage-subtitle{
@@ -560,6 +559,9 @@ only screen and (max-width: 760px),
         display:inline-block;
         padding-left:6%;
         padding-right:6%
+    }
+    .devicon-oracle-original{
+        height: 64px;
     }
     .skill-icon i{
         font-size:4rem;
