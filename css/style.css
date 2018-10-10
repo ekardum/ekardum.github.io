@@ -489,6 +489,9 @@ width:110px;
     .bullet-list{
         margin-left:1.125em
     }
+    .homepage .subheading{
+        font-size:1.9rem;
+    }
 }
 @media screen and (max-width:310px){
     .grid_item{
@@ -524,12 +527,23 @@ only screen and (max-width: 760px),
         left: -9999px;
     }
     
-    tr { border: 1px solid #ccc; }
+    .skill-icon{
+        width:20%;
+        display:inline-block;
+        padding-left:6%;
+        padding-right:6%
+    }
+    .skill-icon i{
+        font-size:4rem;
+    }
+    .skills-table{
+        display:inherit;
+    }
     
     td { 
         /* Behave  like a "row" */
         border: none;
-        border-bottom: 1px solid #eee; 
+
         position: relative;
         padding-left: 50%; 
     }
@@ -554,6 +568,13 @@ only screen and (max-width: 760px),
     }
     .bullet-list{
         margin-left:1.125em
+    }
+    .figure{
+        margin-left: -20px;
+        margin-right: -20px;
+}
+    .text-code{
+        white-space: initial !important;
     }
 }
 @media screen and (max-width:310px){
