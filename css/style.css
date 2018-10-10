@@ -36,7 +36,7 @@ body>svg{
     padding:20px;
     display:inline-block;
     vertical-align:top;
-    text-align:left;
+    text-align:justify;
     width:100%
 }
 .grid--2{
