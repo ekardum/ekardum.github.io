@@ -573,6 +573,9 @@ only screen and (max-width: 760px),
         margin-left: -20px;
         margin-right: -20px;
 }
+    .code{
+        white-space: initial;
+    }
 }
 @media screen and (max-width:310px){
     .grid_item{
