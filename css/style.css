@@ -36,8 +36,11 @@ body>svg{
     padding:20px;
     display:inline-block;
     vertical-align:top;
-    text-align:justify;
+    text-align:left;
     width:100%
+}
+.grid_item div{
+    text-align:justify;
 }
 .grid--2{
     max-width:440px
