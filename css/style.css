@@ -225,9 +225,7 @@ body>svg{
 .post em{
     padding-right:.15em
 }
-.post_navigation{
-    margin-top:70px;
-}
+
 .post_navigation .nav_item{
     width:45%
 }
@@ -480,6 +478,9 @@ width:110px;
 }
 .homepage-subtitle{
     display:initial;
+}
+#disqus_thread{
+    margin-top:50px;
 }
 /*
 .subheading{
