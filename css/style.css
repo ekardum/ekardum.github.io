@@ -576,6 +576,9 @@ only screen and (max-width: 760px),
     .skills-table{
         display:inherit;
     }
+    img{
+    max-width:100%;
+    }
     
     td { 
         /* Behave  like a "row" */
