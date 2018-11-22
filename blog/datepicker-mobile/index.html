@@ -28,58 +28,49 @@
 <div class="header">
 <div class="grid grid--6">
 <div class="grid_item grid--center">
-<h1 class="title">Auto-size textarea</h1>
-<time class="subtitle" datetime="2018-09-21">09 October 2018</time>
+<h1 class="title">Datepicker - mobile design</h1>
+<time class="subtitle" datetime="2018-11-22">22 November 2018</time>
 </div>
 </div>
 </div>
 <main class="content page">
 <ul class="grid grid--4">
 <li class="grid_item">
-<div>Scrolling through textareas can be difficult to read when you have a fixed height but a lot of text in it. What if you could somehow make it responsive but still keep default design when page loads? </br>
-<b>Step 1:</b> add dynamic action on <code>Page load</code> with <i>Event Scope</i> <code>Dynamic</code>:</p>
-<img src="img/1.png">
-<p>Create new <i>True</i> action (JS) and add the following code:</p>
+<div>APEX 18 has brought many improvements to mobile design, but you can still improve some things to look more native. </div>
+<p>For example, when you are on your mobile device, and want to choose date in datepicker component, it opens both calendar and your keyboard which you don't exactly need, and it sometimes overlaps the section where you have to choose date. It looks like this on my device: </p>
+<img src="img/1.jpg"></br></br>
+<p>Instead of that, you could change your datepicker component when you are on mobile device to look like this:</p>
+<img src="img/2.jpg"></br></br>
+<p>You will need two dynamic actions - one that changes date picker type to <em>date</em> and second returning to <em>text</em> before submit. reason for that is date format - HTML5 date component formatting doesn't work as it should, so it's much simpler to just put it back to text with your own format.</p>
+<p>First dynamic action is on page load > Execute JavaScript code and it looks like this:</p>
 <figure class="figure">
-<pre class="figure_item image codeblock"><code class="code code--js">let textarea = document.querySelectorAll('textarea');
-
-textarea.forEach(function(textarea) {
-textarea.addEventListener('click', autoresize);
-textarea.addEventListener('keydown', autoresize);
-});
-
-function autoresize(){
-  let el = this;
-  setTimeout(function(){
-    el.style.cssText = 'height:auto; padding:0';
-    el.style.cssText = 'height:' + el.scrollHeight + 'px';
-  },0);
-}</code></pre>
+<pre class="figure_item image codeblock"><code class="code code--js">$('#P5_DATE').attr('type', 'date');
+$('.date-mobile .a-Button--calendar').hide();</code></pre>
 </figure>
-<p></br><b>Step 2:</b> -To make textarea get back to its default size, create another Dynamic action on <i>Lose focus</i> with jQuery selector <code>textarea</code>: </p>
-<img src="img/2.png">
-<p>In <i>True</i> action save this code:</p>
+<p><b><i>Note: </i></b>Don't forget to add custom class if you want to reach only specific datepicker and your <b>format mask</b> has to be same as in second dynamic action, otherwise page submit won't pass:</p>
+<img src="img/3.jpg"></br></br>
+<p>Second dynamic action is on <em>SAVE</em> button click(before page submit) > Execute JavaScript code and it looks like this:
+
 <figure class="figure">
-<pre class="figure_item image codeblock"><code class="code code--css">$('textarea').css('height','auto')</code></pre>
+<pre class="figure_item image codeblock"><code class="code code--css">//return to default type
+$("#P5_DATE").attr('type','text');
+
+//format text as you wish
+var date = $("#P5_DATE").val().split('-');
+var dateFormatted = date[2] + '-' + date[1] + '-' + date[0];
+
+//return formatted string and submit page
+$("#P5_DATE").val(dateFormatted);
+apex.submit({request:"SAVE"});</code></pre>
 </figure>
 </br>
-<i>Note:</i></b> If you only have one textarea on the page, you don't have to use the <code>forEach</code>. The only difference is in that case you need <code>querySelector</code> instead of <code>querySelectorAll</code>: </br>
-<figure class="figure">
-<pre class="figure_item image codeblock"><code class="code code--js">let textarea = document.querySelector('textarea');
-
-textarea.addEventListener('click', autoresize);
-textarea.addEventListener('keydown', autoresize);
-</code></pre>
-</figure>
-
-<a href="https://apex.oracle.com/pls/apex/f?p=89057:2" target="_blank" class="link-button">Demo</a>
+<p><b><i>Note: </i></b>You also have to set condition for second dynamic action because if you submit without choosing a date, it will try to format an <em>undefined</em> value:</p>
+<img src="img/4.jpg"></br></br>
+<a href="https://apex.oracle.com/pls/apex/f?p=89057:1" target="_blank" class="link-button">Demo</a>
 </li>
 <li class="grid_item">
 <div class="nav post_navigation">
-<div class="nav_item nav_item--prev">Previous<br><a href="../collapsible-custom/index.html" title="Previous post: Auto-size textarea">Custom collapse action</a>
-</div>
-<div class="nav_item nav_item--next"> Next<br><a href="../datepicker-mobile/index.html" title="Next post: Auto-size textarea">Datepicker - mobile</a>
-</div>
+<div class="nav_item nav_item--prev">Previous<br><a href="../auto-size-textarea/index.html" title="Previous post: Auto-size textarea">Auto-size textarea</a>
 </div>
 </li>
 
@@ -93,7 +84,7 @@ textarea.addEventListener('keydown', autoresize);
 
 var disqus_config = function () {
 this.page.url = document.URL;;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 'auto-size-textarea'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = 'collapsible-custom'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -105,6 +96,7 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </li>
+
 </ul>
 </main>
 
